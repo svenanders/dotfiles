@@ -44,7 +44,6 @@ apps=(
   spotify
   vagrant
   arq
-  flash
   iterm2
   qlprettypatch
   shiori
@@ -81,6 +80,9 @@ fonts=(
   font-roboto
   inconsolata
 )
+
+# install macvim
+brew install macvim  --override-system-vim
 
 # install fonts
 echo "Installing fonts..."

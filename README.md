@@ -5,7 +5,7 @@ dotfiles
 
 ## Colors 
 
-Terminal theme: https://github.com/tomislav/osx-terminal.app-colors-solarized 
+iTerm2 Terminal theme: https://github.com/mbadolato/iTerm2-Color-Schemes.git 
 
 ## Font
 
@@ -13,6 +13,6 @@ http://www.levien.com/type/myfonts/inconsolata.html
 
 ## Bash
 
-Change bash Terminal > Prefrences > Startup > Shells open with = /usr/local/bin/bash
+Change iterm prefs to open shell with /usr/local/bin/bash
 
 

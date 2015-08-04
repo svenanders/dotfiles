@@ -1,13 +1,14 @@
-ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-
 # Update brew
+echo Updating Brew
 brew update
 
 # Update brew formula
 brew upgrade
 
+echo Install Cask
 brew install caskroom/cask/brew-cask
 
+echo Installing utils 
 brew install findutils
 brew install bash
 brew install git
@@ -24,14 +25,19 @@ brew tap atlassian/tap
 brew install atlassian/tap/atlassian-plugin-sdk
 brew install watchman
 
+echo Installing Chrome
 brew cask install google-chrome
-brew cask install totalterminal
+#brew cask install totalterminal
+
+echo Installing Android Studio
 brew cask install visual-studio-code
 brew cask install android-studio
 
+echo React Native
 npm install -g react-native-cli
 npm install -g npm-check-updates
 
+echo Installing Cocoapods
 sudo gem install cocoapods
 pod setup --verbose
 

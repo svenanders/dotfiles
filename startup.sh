@@ -12,6 +12,11 @@ cp ./.profile ~/.profile
 cp ./.npmrc ~/.npmrc
 
 if [[ -f ./.osx && `uname` == "Darwin" ]]; then
+	echo "Install rbenv"
+	git clone https://github.com/sstephenson/rbenv.git ~/.rbenv
+	echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> ~/.bashrc
+	echo 'eval "$(rbenv init -)"' >> ~/.bashrc
+
 	echo "Updating OSX settings and installing brew "
 	/usr/bin/osascript ./installbrew.app
 	ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"

@@ -25,19 +25,74 @@ brew tap atlassian/tap
 brew install atlassian/tap/atlassian-plugin-sdk
 brew install watchman
 
-echo Installing Chrome
-brew cask install google-chrome
-#brew cask install totalterminal
+brew tap caskroom/versions
 
-echo Installing Android Studio
-brew cask install visual-studio-code
-brew cask install android-studio
+# Apps
+apps=(
+  alfred
+  dropbox
+  google-chrome
+  qlcolorcode
+  screenflick
+  slack
+  transmit
+  appcleaner
+  firefox
+  hazel
+  qlmarkdown
+  seil
+  spotify
+  vagrant
+  arq
+  flash
+  iterm2
+  qlprettypatch
+  shiori
+  sublime-text3
+  virtualbox
+  atom
+  flux
+  mailbox
+  qlstephen
+  sketch
+  tower
+  vlc
+  cloudup
+  nvalt
+  quicklook-json
+  skype
+  visual-studio-code
+  android-studio
+  transmission
+)
 
-echo React Native
+echo "Installing casks..."
+brew cask install --appdir="/Applications" ${apps[@]}
+
+# Link Alfred with casks folder
+brew cask alfred link
+
+# Install fonts like a boss
+brew tap caskroom/fonts
+
+fonts=(
+  font-m-plus
+  font-clear-sans
+  font-roboto
+  inconsolata
+)
+
+# install fonts
+echo "Installing fonts..."
+brew cask install ${fonts[@]}
+
+echo "Installing React Native"
 npm install -g react-native-cli
+
+echo "Installing npm updates"
 npm install -g npm-check-updates
 
-echo Installing Cocoapods
+echo "Installing Cocoapods"
 sudo gem install cocoapods
 pod setup --verbose
 

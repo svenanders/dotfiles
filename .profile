@@ -6,7 +6,7 @@
 alias ls="ls -G -F"
 alias la="ls -al"
 alias ll="ls -l"
-alias l="ls"
+alias l="ls -lhctFGp"
 
 alias pu="pushd ."
 alias po="popd"
@@ -28,7 +28,7 @@ alias dev="cd ~/Dropbox/Dev"
 alias fixow='/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/LaunchServices.framework/Versions/A/Support/lsregister -kill -r -domain local -domain user;killall Finder;echo "Open With has been rebuilt, Finder will relaunch"'
 alias pw="pwgen -s1vv 12 | pbcopy && echo Nytt passord er kopiert til utklippstavlen"
 alias pwl="pwgen -s1vv 64 | pbcopy && echo Nytt passord er kopiert til utklippstavlen"
-alias ls='ls -lhctFGp'
+#alias ls='ls -lhctFGp'
 alias s='open -a "Sublime Text" '
 alias gonode='brew unlink iojs && brew link node'
 alias goio='brew unlink node && brew link iojs --force'

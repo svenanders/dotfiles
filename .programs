@@ -38,6 +38,7 @@ apps=(
   screenflick
   slack
   transmit
+  dashlane
   cleanmymac
   appcleaner
   firefox
@@ -55,6 +56,8 @@ apps=(
   atom
   intellij-idea
   flux
+  mou
+  araxis-merge
   mailbox
   qlstephen
   sketch

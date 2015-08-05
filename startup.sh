@@ -28,4 +28,7 @@ if [[ -f ./.osx && `uname` == "Darwin" ]]; then
 	chsh -s /usr/local/bin/bash
 fi
 
+echo "Running osx-for-hackers"
+sh ./osx-for-hackers.sh
+
 echo "Finished"

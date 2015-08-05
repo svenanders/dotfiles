@@ -30,6 +30,7 @@ alias pw="pwgen -s1vv 12 | pbcopy && echo Nytt passord er kopiert til utklippsta
 alias pwl="pwgen -s1vv 64 | pbcopy && echo Nytt passord er kopiert til utklippstavlen"
 #alias ls='ls -lhctFGp'
 alias s='open -a "Sublime Text" '
+alias md='open -a "Mou"'
 alias gonode='brew unlink iojs && brew link node'
 alias goio='brew unlink node && brew link iojs --force'
 

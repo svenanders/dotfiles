@@ -1,18 +1,17 @@
-dotfiles
-========
+#dotfiles
 
-#OSX
+###OSX
 
-## Colors 
+##### Colors 
 
-iTerm2 Terminal theme: https://github.com/mbadolato/iTerm2-Color-Schemes.git 
+iTerm2 [https://github.com/mbadolato/iTerm2-Color-Schemes.git](iTerm2 color schemes)
 
-## Font
+##### Font
 
-http://www.levien.com/type/myfonts/inconsolata.html
+Fonts are automatically installed. Look for _inconsolata_,   _font-source-code-pro_ and _m-plus_ when the install is done.
 
-## Bash
+##### Bash
 
-Change iterm prefs to open shell with /usr/local/bin/bash
+Change iTerm2 prefs to open a new shell with _/usr/local/bin/bash_
 
 

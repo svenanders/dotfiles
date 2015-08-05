@@ -44,8 +44,8 @@ brew install homebrew/dupes/grep
 # You'll also need to update the $PATH in your ~/.bash_profile in 
 # order to use these tools over their Mac counterparts:
 
-$PATH=$(brew --prefix coreutils)/libexec/gnubin:$PATH
-echo 'export PATH="$PATH"' >> ~/.bashrc
+PATH=$(brew --prefix coreutils)/libexec/gnubin:$PATH
+echo export PATH="$PATH" >> ~/.bashrc
 
 # Installing utils 
 brew tap atlassian/tap

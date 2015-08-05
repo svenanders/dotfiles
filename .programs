@@ -5,26 +5,56 @@ brew update
 # Update brew formula
 brew upgrade
 
-echo Install Cask
-brew install caskroom/cask/brew-cask
 
-echo Installing utils 
-brew install findutils
-brew install bash
-brew install git
-brew install bash-completion
-brew install node
-brew install mongodb
-brew install rethinkdb
-brew install redis
-brew install heroku-toolbelt
-brew install imagemagick
-brew install xctool
-brew install boot2docker
+#This establishes a solid foundation for your Mac. 
+
+binaries=(
+  graphicsmagick
+  webkit2png
+  rename
+  zopfli
+  ffmpeg
+  python
+  sshfs
+  trash
+  node
+  tree
+  ack
+  hub
+  coreutils
+  findutils
+  bash
+  git
+  bash-completion
+  mongodb
+  rethinkdb
+  redis
+  heroku-toolbelt
+  imagemagick
+  xctool
+  boot2docker
+  watchman
+)
+
+echo "installing binaries..."
+brew install ${binaries[@]}
+
+# Install more recent versions of some OS X tools
+brew tap homebrew/dupes
+brew install homebrew/dupes/grep
+
+# You'll also need to update the $PATH in your ~/.bash_profile in 
+# order to use these tools over their Mac counterparts:
+
+$PATH=$(brew --prefix coreutils)/libexec/gnubin:$PATH
+echo 'export PATH="$PATH"' >> ~/.bashrc
+
+# Installing utils 
 brew tap atlassian/tap
 brew install atlassian/tap/atlassian-plugin-sdk
-brew install watchman
 
+# Install Cask
+brew install caskroom/cask/brew-cask
 brew tap caskroom/versions
 
 # Apps

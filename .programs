@@ -113,15 +113,16 @@ fonts=(
   font-m-plus
   font-clear-sans
   font-roboto
+  font-source-code-pro
   font-inconsolata
 )
-
-# install macvim
-brew install macvim  --override-system-vim
 
 # install fonts
 echo "Installing fonts..."
 brew cask install ${fonts[@]}
+
+# install macvim
+brew install macvim  --override-system-vim
 
 echo "Installing React Native"
 npm install -g react-native-cli

@@ -23,12 +23,15 @@ if [[ -f ./.osx && `uname` == "Darwin" ]]; then
 	echo export PATH="$HOME/.rbenv/bin:$PATH" >> ~/.bashrc
 	echo 'eval "$(rbenv init -)"' >> ~/.bashrc
 
-        echo "Updating OSX settings and installing brew "
-	/usr/bin/osascript ./installbrew.app
-	ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+	if test ! $(which brew); then
+	  echo "Installing homebrew..."
+	  ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+	fi
 
-	echo "Installing programs"
+	echo "Installing OSX programs"
 	sh ./.programs
+
+	echo "Making your Mac awesome"
 	sh ./.osx
 	sudo bash -c "echo /usr/local/bin/bash >> /private/etc/shells"
 	chsh -s /usr/local/bin/bash

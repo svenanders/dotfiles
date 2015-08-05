@@ -411,6 +411,32 @@ git config --global core.editor "subl -n -w"
 
 
 ###############################################################################
+# Git Config
+###############################################################################
+
+echo ""
+echo "Would you like to setup your git config?  (y/n)"
+read -r response
+if [[ $response =~ ^([yY][eE][sS]|[yY])$ ]]; then
+  echo "What is your username? (real, full name)"
+  read FULLNAME
+  git config --global user.name FULLNAME
+
+  echo "What is your emailaddress?"
+  read EMAILADRESS
+  git config --global user.email EMAILADRESS
+fi
+
+git config --global alias.co checkout
+git config --global alias.br branch
+git config --global alias.ci commit
+git config --global alias.st status
+git config --global alias.unstage 'reset HEAD --'
+git config --global alias.last 'log -1 HEAD'
+
+
+
+###############################################################################
 # Kill affected applications
 ###############################################################################
 

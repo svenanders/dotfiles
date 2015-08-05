@@ -29,6 +29,8 @@ brew tap caskroom/versions
 
 # Apps
 apps=(
+  java
+  java6
   alfred
   dropbox
   google-chrome
@@ -51,6 +53,7 @@ apps=(
   sublime-text3
   virtualbox
   atom
+  intellij-idea
   flux
   mailbox
   qlstephen
@@ -62,15 +65,13 @@ apps=(
   quicklook-json
   skype
   visual-studio-code
-  android-studio
   transmission
 )
 
+# android-studio silently fails
+
 echo "Installing casks..."
 brew cask install --appdir="/Applications" ${apps[@]}
-
-# Link Alfred with casks folder
-brew cask alfred link
 
 # Install fonts like a boss
 brew tap caskroom/fonts
@@ -79,7 +80,7 @@ fonts=(
   font-m-plus
   font-clear-sans
   font-roboto
-  inconsolata
+  font-inconsolata
 )
 
 # install macvim

@@ -269,8 +269,7 @@ export CLICOLOR=1
 export LSCOLORS=GxFxCxDxBxegedabagaced
 export PATH="/usr/local/bin:$PATH"
 
-# ruby
-eval "$(rbenv init -)"
-
 # rupa Z
 . /usr/local/bin/z.sh
+
+

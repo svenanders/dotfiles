@@ -25,12 +25,11 @@ alias dl="cd ~/Downloads"
 alias dt="cd ~/Desktop"
 alias dev="cd ~/Dropbox/Dev"
 
-
 alias fixow='/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/LaunchServices.framework/Versions/A/Support/lsregister -kill -r -domain local -domain user;killall Finder;echo "Open With has been rebuilt, Finder will relaunch"'
 alias pw="pwgen -s1vv 12 | pbcopy && echo Nytt passord er kopiert til utklippstavlen"
 alias pwl="pwgen -s1vv 64 | pbcopy && echo Nytt passord er kopiert til utklippstavlen"
 alias ls='ls -lhctFGp'
-alias s='open -a "Sublime Text"'
+alias s='open -a "Sublime Text" '
 alias gonode='brew unlink iojs && brew link node'
 alias goio='brew unlink node && brew link iojs --force'
 
@@ -127,7 +126,7 @@ function _useJava() {
 	export JAVA_HOME=$(/usr/libexec/java_home -v ${1} -d64)
 }
 
-_useJava 1.7
+_useJava 1.8
 
 function server() {
 	python -m SimpleHTTPServer $1

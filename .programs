@@ -97,6 +97,8 @@ apps=(
   skype
   visual-studio-code
   transmission
+  firefoxdeveloperedition
+  air-video-server-hd
 )
 
 

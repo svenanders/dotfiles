@@ -589,11 +589,11 @@ read -r response
 if [[ $response =~ ^([yY][eE][sS]|[yY])$ ]]; then
   echo "What is your username? (real, full name)"
   read FULLNAME
-  git config --global user.name FULLNAME
+  git config --global user.name $FULLNAME
 
   echo "What is your emailaddress?"
   read EMAILADRESS
-  git config --global user.email EMAILADRESS
+  git config --global user.email $EMAILADRESS
 fi
 
 git config --global merge.tool araxis

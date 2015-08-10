@@ -30,6 +30,7 @@ binaries=(
   heroku-toolbelt
   imagemagick
   xctool
+  cgvg
   boot2docker
   watchman
 )

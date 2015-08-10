@@ -269,7 +269,9 @@ export CLICOLOR=1
 export LSCOLORS=GxFxCxDxBxegedabagaced
 export PATH="/usr/local/bin:$PATH"
 
-# rupa Z
+# install rupa Z
 . /usr/local/bin/z.sh
 
+# source .profile
+. ~/.profile
 

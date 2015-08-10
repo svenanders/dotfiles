@@ -23,6 +23,7 @@ binaries=(
   findutils
   bash
   git
+  pwgen
   bash-completion
   mongodb
   rethinkdb

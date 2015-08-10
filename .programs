@@ -146,7 +146,7 @@ chmod +x /usr/local/bin/docker-compose
 curl -fsSL https://raw.github.com/supermarin/Alcatraz/master/Scripts/install.sh | sh
 
 # Heroku accounts
-heroku plugins:install git://github.com/ddollar/heroku-accounts.git
-heroku accounts:add personal --auto
-
+sudo gem install heroku_plus
+hp -a -c owner
+heroku login
 

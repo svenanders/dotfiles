@@ -30,7 +30,8 @@ alias pw="pwgen -s1vv 12 | pbcopy && echo Nytt passord er kopiert til utklippsta
 alias pwl="pwgen -s1vv 64 | pbcopy && echo Nytt passord er kopiert til utklippstavlen"
 
 # Safer rm
-alias rm="rm -i"
+#alias rm="rm -i"
+alias rm="trash"
 alias s='open -a "Sublime Text" '
 alias md='open -a "Mou"'
 alias gonode='brew unlink iojs && brew link node'

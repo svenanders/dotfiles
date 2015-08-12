@@ -12,6 +12,7 @@ binaries=(
   webkit2png
   rename
   zopfli
+  wget
   ffmpeg
   python
   trash

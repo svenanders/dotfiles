@@ -28,6 +28,7 @@ alias dev="cd ~/Dropbox/Dev"
 alias fixow='/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/LaunchServices.framework/Versions/A/Support/lsregister -kill -r -domain local -domain user;killall Finder;echo "Open With has been rebuilt, Finder will relaunch"'
 alias pw="pwgen -s1vv 12 | pbcopy && echo Nytt passord er kopiert til utklippstavlen"
 alias pwl="pwgen -s1vv 64 | pbcopy && echo Nytt passord er kopiert til utklippstavlen"
+alias npmup="npm install -g npm@latest"
 
 # Safer rm
 #alias rm="rm -i"

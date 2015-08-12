@@ -55,6 +55,22 @@ alias mcit='mvn clean install -Dmaven.test.skip'
 alias mt='mvn test'
 
 alias g="git"
+alias getwebpage="wget -r -np --page-requisites --no-clobber "
+alias getcomposer='curl -sS https://getcomposer.org/installer | php'
+alias startmongo='if [ ! -d ~/Dropbox/db ] ; then mkdir ~/Dropbox/db; fi; mongod --dbpath ~/Dropbox/db &'
+
+alias gitsearch='git rev-list --all | xargs git grep -F'
+alias gitlog='git log --pretty=format:"%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset" --abbrev-commit'
+alias gitweek='git log --author Sven --since="2 sunday ago" --until="1 sunday ago" --format="%Cgreen%ci%Creset %s%Creset" --abbrev-commit'
+alias prettylog='git log --graph --pretty=oneline --abbrev-commit --decorate'
+
+function title ()
+{
+    TITLE=$*;
+    export PROMPT_COMMAND='echo -ne "\033]0;$TITLE\007"'
+}
+title `uname -n`
+
 
 ####################
 # Exports

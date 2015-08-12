@@ -69,8 +69,7 @@ function title ()
     TITLE=$*;
     export PROMPT_COMMAND='echo -ne "\033]0;$TITLE\007"'
 }
-title `uname -n`
-
+title $(basename `pwd`)
 
 ####################
 # Exports
@@ -151,4 +150,8 @@ _useJava 1.8
 
 function server() {
 	python -m SimpleHTTPServer $1
+}
+
+function cd (){
+ 	builtin cd $1 && title $1
 }

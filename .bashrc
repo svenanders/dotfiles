@@ -269,6 +269,7 @@ export PATH="/usr/local/bin:$PATH"
 # install rupa Z
 . /usr/local/bin/z.sh
 
-# source .profile
+# source profiles
 . ~/.profile
+. ~/.profile.private
 

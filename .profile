@@ -47,6 +47,8 @@ alias gs='git status'
 alias ga='git add .'
 alias gc='git commit -m' # requires you to type a commit message
 alias gp='git push'
+alias gco='git checkout'
+alias gm='git push origin master'
 git config --global user.name "Sven Anders Robbestad"
 git config --global user.email "robbestad@gmail.com"
 

@@ -25,6 +25,10 @@ alias dl="cd ~/Downloads"
 alias dt="cd ~/Desktop"
 alias dev="cd ~/Dropbox/Dev"
 
+# tar
+alias tarcompress="tar -czf " # Compress Ze Files
+alias tarextract="tar -xzf " # eXtract Ze Files
+
 alias fixow='/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/LaunchServices.framework/Versions/A/Support/lsregister -kill -r -domain local -domain user;killall Finder;echo "Open With has been rebuilt, Finder will relaunch"'
 alias pw="pwgen -s1vv 12 | pbcopy && echo Nytt passord er kopiert til utklippstavlen"
 alias pwl="pwgen -s1vv 64 | pbcopy && echo Nytt passord er kopiert til utklippstavlen"
@@ -49,8 +53,6 @@ alias gc='git commit -m' # requires you to type a commit message
 alias gp='git push'
 alias gco='git checkout'
 alias gm='git push origin master'
-git config --global user.name "Sven Anders Robbestad"
-git config --global user.email "robbestad@gmail.com"
 
 # Code-convenience
 

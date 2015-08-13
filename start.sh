@@ -37,4 +37,7 @@ if [[ -f ./.osx && `uname` == "Darwin" ]]; then
 	chsh -s /usr/local/bin/bash
 fi
 
+git config --global user.email "robbestad@gmail.com"
+git config --global user.name "Sven A Robbestad"
+
 echo "Finished"

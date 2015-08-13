@@ -47,6 +47,8 @@ alias gs='git status'
 alias ga='git add .'
 alias gc='git commit -m' # requires you to type a commit message
 alias gp='git push'
+git config --global user.name "Sven Anders Robbestad"
+git config --global user.email "robbestad@gmail.com"
 
 # Code-convenience
 
@@ -63,13 +65,12 @@ alias gitsearch='git rev-list --all | xargs git grep -F'
 alias gitlog='git log --pretty=format:"%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset" --abbrev-commit'
 alias gitweek='git log --author Sven --since="2 sunday ago" --until="1 sunday ago" --format="%Cgreen%ci%Creset %s%Creset" --abbrev-commit'
 alias prettylog='git log --graph --pretty=oneline --abbrev-commit --decorate'
-
-function title ()
-{
-    TITLE=$*;
-    export PROMPT_COMMAND='echo -ne "\033]0;$TITLE\007"'
-}
-title $(basename `pwd`)
+#function title ()
+#{
+#    TITLE=$*;
+#    export PROMPT_COMMAND='echo -ne "\033]0;$TITLE\007"'
+#}
+#title $(basename `pwd`)
 
 ####################
 # Exports
@@ -130,12 +131,10 @@ GREP_COLORS='ms=1;31'
 export GREP_OPTIONS GREP_COLORS
 
 # Man
-
 MANWIDTH=80
 export MANWIDTH
 
 # Mail
-
 unset MAILCHECK
 
 ####################

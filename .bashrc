@@ -18,11 +18,11 @@ if tput setaf 1 &> /dev/null; then
 
   # If the terminal supports at least 256 colors, write out our 256 color based set
   if [[ "$(tput colors)" -ge 256 ]] &> /dev/null; then
-    user_color="$bold$(tput setaf 27)" # BOLD BLUE
-    preposition_color="$bold$(tput setaf 7)" # BOLD WHITE
+    user_color="$bold$(tput setaf 76)" # BOLD GREEN
+    preposition_color="$bold$(tput setaf 0)" # BOLD WHITE
     device_color="$bold$(tput setaf 39)" # BOLD CYAN
     dir_color="$bold$(tput setaf 76)" # BOLD GREEN
-    git_status_color="$bold$(tput setaf 154)" # BOLD YELLOW
+    git_status_color="$bold$(tput setaf 9)" # BOLD YELLOW
     git_progress_color="$bold$(tput setaf 9)" # BOLD RED
   else
     # Otherwise, use colors from our set of 8
@@ -47,7 +47,7 @@ else
 
   reset="\033[m"
   user_color="\033[1;34m" # BLUE
-  preposition_color="\033[1;37m" # WHITE
+  preposition_color="\033[1;30m" # GRAY 
   device_color="\033[1;36m" # CYAN
   dir_color="\033[1;32m" # GREEN
   git_status_color="\033[1;33m" # YELLOW
@@ -246,27 +246,24 @@ ssh_client() {
 }
 
 create_bash_prompt() {
-  PS1="\[$user_color\]$(ssh_client)\[$reset\]\[$dir_color\]\w\[$reset\]\$( is_on_git && echo -n \" \[$preposition_color\] on \[$reset\] \" && echo -n \"\[$git_status_color\]\$(get_git_info)\" && echo -n \"\[$git_progress_color\]\$(get_git_progress)\" && echo -n \"\[$preposition_color\]\")\[$reset\]\[$symbol_color\] \$ \[$reset\]"
+  PS1="\[$user_color\]$(ssh_client)\[$reset\]\[$user_color\]\w\[$reset\]\$( is_on_git && echo -n \" \[$preposition_color\]on \[$reset\]\" && echo -n \"\[$git_status_color\]\$(get_git_info)\" && echo -n \"\[$git_progress_color\]\$(get_git_progress)\" && echo -n \"\[$preposition_color\]\")\[$reset\]\[$preposition_color\]\n\$ \[$reset\]"
 }
 
 set_tab_title() {
   echo -n -e "\033]0;${PWD##*/}\007"
 }
 
-#export PROMPT_COMMAND=create_bash_prompt
-#export PROMPT_COMMAND="set_tab_title ; $PROMPT_COMMAND"
+export PROMPT_COMMAND=create_bash_prompt
+export PROMPT_COMMAND="set_tab_title ; $PROMPT_COMMAND"
 
-PROMPT_COMMAND="history -a; history -c; history -r; ${PROMPT_COMMAND}"
-#export HISTFILE=~/.bash_eternal_history
- 
 ### Prompt Colors
-export GITAWAREPROMPT=~/.bash/git-aware-prompt
-source $GITAWAREPROMPT/main.sh
-
-export PS1="\[$txtgrn\]\w\n\[$txtcyn\]\$git_branch\[$txtred\]\$git_dirty\[$txtrst\]⚡  "
-export SUDO_PS1="\[$bakred\]\u@\h\[$txtrst\] \w\$ "
-export CLICOLOR=1
-export LSCOLORS=GxFxCxDxBxegedabagaced
+#export GITAWAREPROMPT=~/.bash/git-aware-prompt
+#source $GITAWAREPROMPT/main.sh
+#
+##export PS1="\[$txtgrn\]\w\n\[$txtcyn\]\$git_branch\[$txtred\]\$git_dirty\[$txtrst\]⚡  "
+##export SUDO_PS1="\[$bakred\]\u@\h\[$txtrst\] \w\$ "
+#export CLICOLOR=1
+#export LSCOLORS=GxFxCxDxBxegedabagaced
 export PATH="/usr/local/bin:$PATH"
 
 # install rupa Z

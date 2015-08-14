@@ -1,4 +1,4 @@
-####################
+###################
 # Alias
 ####################
 
@@ -156,5 +156,5 @@ function server() {
 }
 
 function cd (){
- 	builtin cd $1 && title $1
+ 	builtin cd "$1" && title "$1"
 }

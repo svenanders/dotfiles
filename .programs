@@ -36,6 +36,7 @@ binaries=(
   boot2docker
   watchman
   caffeine
+  tripmode
 )
 
 echo "installing binaries..."

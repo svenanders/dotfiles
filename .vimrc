@@ -6,8 +6,11 @@ execute pathogen#infect()
 
 "ignore for ctrl-p fuzzy
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/node_modules/*
-let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git'
+"let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git'
+let g:ctrlp_custom_ignore = '\v[\/](node_modules|target|dist)|(\.(swp|ico|git|svn|DS_Store))$'
 
+" Don't require saving a buffer before switching buffers
+set hidden
 
 autocm BufEnter * if expand('%:p') !~ '://' | :lchdir %:p:h | endif
 "autocmd BufEnter * lcd %:p:h

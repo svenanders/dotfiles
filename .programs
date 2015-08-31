@@ -35,8 +35,7 @@ binaries=(
   cgvg
   boot2docker
   watchman
-  caffeine
-  tripmode
+  msmtp
 )
 
 echo "installing binaries..."
@@ -67,6 +66,7 @@ apps=(
   alfred
   dropbox
   google-chrome
+  caffeine
   sizeup
   qlcolorcode
   screenflick
@@ -79,6 +79,7 @@ apps=(
   hazel
   qlmarkdown
   seil
+  tripmode
   spotify
   vagrant
   arq

@@ -1,0 +1,11 @@
+account gmail
+host smtp.gmail.com
+port 587
+protocol smtp
+auth on
+from NAME
+user MAILADRESS
+password PASSWORD
+tls on
+tls_nocertcheck
+account default : gmail

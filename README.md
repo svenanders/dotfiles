@@ -14,4 +14,10 @@ Fonts are automatically installed. Look for _inconsolata_, _font-source-code-pro
 
 Change iTerm2 prefs to open a new shell with _/usr/local/bin/bash_
 
+## Send mail from command line
 
+Rename .msmtprc.private to .msmtprc
+
+##### usage
+
+    echo "Your message" | mail recipient@example.com

@@ -6,6 +6,8 @@ cp ./.bashrc ~/.bashrc
 cp ./.inputrc ~/.inputrc
 cp ./.gitconfig ~/.gitconfig
 cp ./.gitignore ~/.gitignore
+cp ./.mailrc ~ /.mailrc
+cp ./.msmtprc ~ /.msmtprc
 cp ./.gitignore_global ~/.gitignore_global
 cp ./.osx_always ~/.osx_always
 cp ./.profile ~/.profile

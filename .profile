@@ -20,11 +20,6 @@ alias o="open"
 alias oo="open ."
 alias h="history"
 
-alias d="cd ~/Dropbox"
-alias dl="cd ~/Downloads"
-alias dt="cd ~/Desktop"
-alias dev="cd ~/Dropbox/Dev"
-
 # tar
 alias tarcompress="tar -czf " # Compress Ze Files
 alias tarextract="tar -xzf " # eXtract Ze Files

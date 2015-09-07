@@ -30,7 +30,6 @@ binaries=(
   rethinkdb
   redis
   heroku-toolbelt
-  imagemagick
   xctool
   cgvg
   boot2docker
@@ -71,6 +70,7 @@ apps=(
   qlcolorcode
   screenflick
   slack
+  sabnzbd
   transmit
   dashlane
   cleanmymac

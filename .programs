@@ -17,6 +17,7 @@ binaries=(
   python
   trash
   node
+  gradle
   tree
   ack
   hub
@@ -89,7 +90,7 @@ apps=(
   sublime-text3
   virtualbox
   atom
-  intellij-idea
+  webstorm
   flux
   mou
   araxis-merge

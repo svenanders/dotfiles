@@ -69,9 +69,9 @@ apps=(
   caffeine
   sizeup
   qlcolorcode
+  balsamiq-mockups
   screenflick
   slack
-  sabnzbd
   transmit
   dashlane
   cleanmymac
@@ -93,7 +93,6 @@ apps=(
   webstorm
   flux
   mou
-  araxis-merge
   mailbox
   qlstephen
   sketch

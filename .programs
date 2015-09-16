@@ -72,6 +72,7 @@ apps=(
   balsamiq-mockups
   screenflick
   slack
+  visual-studio-code
   transmit
   dashlane
   cleanmymac

@@ -48,6 +48,7 @@ alias gc='git commit -m' # requires you to type a commit message
 alias gp='git push'
 alias gco='git checkout'
 alias gm='git push origin master'
+alias gf='!git ls-files | grep -i' # git find file
 
 # Code-convenience
 

@@ -35,6 +35,7 @@ binaries=(
   cgvg
   boot2docker
   watchman
+  flow
   msmtp
 )
 
@@ -62,7 +63,6 @@ brew tap caskroom/versions
 # Apps
 apps=(
   java
-  java6
   alfred
   dropbox
   google-chrome
@@ -72,7 +72,6 @@ apps=(
   balsamiq-mockups
   screenflick
   slack
-  visual-studio-code
   transmit
   dashlane
   cleanmymac
@@ -80,8 +79,6 @@ apps=(
   firefox
   hazel
   qlmarkdown
-  seil
-  tripmode
   spotify
   vagrant
   arq
@@ -132,7 +129,7 @@ echo "Installing fonts..."
 brew cask install ${fonts[@]}
 
 # install macvim
-brew install macvim  --override-system-vim
+brew install macvim --with-override-system-vim
 
 echo "Installing React Native"
 npm install -g react-native-cli
@@ -145,6 +142,8 @@ sudo gem install cocoapods
 pod setup --verbose
 
 brew cleanup
+
+nvm install stable
 
 curl -L https://github.com/docker/compose/releases/download/1.2.0/docker-compose-`uname -s`-`uname -m` > /usr/local/bin/docker-compose
 chmod +x /usr/local/bin/docker-compose

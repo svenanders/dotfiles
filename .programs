@@ -7,6 +7,10 @@ brew upgrade
 
 #This establishes a solid foundation for your Mac. 
 
+#Install latest version of npm
+npm install npm@latest -g
+
+# get binaries
 binaries=(
   graphicsmagick
   webkit2png
@@ -134,6 +138,9 @@ brew install macvim --with-override-system-vim
 echo "Installing React Native"
 npm install -g react-native-cli
 
+echo "Installing Gulp & Sass"
+npm install -g gulp node-sass
+
 echo "Installing npm updates"
 npm install -g npm-check-updates
 
@@ -147,4 +154,11 @@ nvm install stable
 
 curl -L https://github.com/docker/compose/releases/download/1.2.0/docker-compose-`uname -s`-`uname -m` > /usr/local/bin/docker-compose
 chmod +x /usr/local/bin/docker-compose
+
+# VIM
+cd ~/.vim/bundle
+mkdir -p ~/.vim/autoload ~/.vim/bundle && \
+curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
+git clone https://github.com/scrooloose/nerdtree.git
+git clone https://github.com/mxw/vim-jsx.git
 

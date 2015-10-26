@@ -21,3 +21,8 @@ Rename .msmtprc.private to .msmtprc
 ##### usage
 
     echo "Your message" | mail recipient@example.com
+
+##### VIM bundles
+
+fetch [https://github.com/svenanders/vimbundles](VIMbundles) and follow the instructions
+

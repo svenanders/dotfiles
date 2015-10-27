@@ -68,6 +68,7 @@ brew tap caskroom/versions
 apps=(
   java
   alfred
+  dashlane
   dropbox
   google-chrome
   caffeine

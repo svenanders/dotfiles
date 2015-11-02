@@ -3,6 +3,15 @@ set nocompatible
 set nopaste
 
 execute pathogen#infect()
+call pathogen#helptags()
+syntax on
+filetype plugin indent on
+"closetag
+autocmd FileType html,htmldjango,jinjahtml,eruby,mako let b:closetag_html_style=1
+autocmd FileType html,xhtml,xml,htmldjango,jinjahtml,eruby,mako source ~/.vim/bundle/closetag/plugin/closetag.vim
+"tagbar
+let g:tagbar_usearrows = 1
+nnoremap <leader>l :TagbarToggle<CR>
 
 "ignore for ctrl-p fuzzy
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/node_modules/*
@@ -11,6 +20,12 @@ let g:ctrlp_custom_ignore = '\v[\/](node_modules|target|dist)|(\.(swp|ico|git|sv
 
 " Don't require saving a buffer before switching buffers
 set hidden
+
+" enable easy paste
+set paste
+
+"editorconfig for fugitive
+let g:EditorConfig_exclude_patterns = ['fugitive://.*']
 
 autocm BufEnter * if expand('%:p') !~ '://' | :lchdir %:p:h | endif
 "autocmd BufEnter * lcd %:p:h

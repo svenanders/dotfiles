@@ -68,7 +68,9 @@ brew tap caskroom/versions
 apps=(
   java
   alfred
+  dashlane
   dropbox
+  ynab
   google-chrome
   caffeine
   sizeup
@@ -106,6 +108,7 @@ apps=(
   skype
   visual-studio-code
   transmission
+  audacity210
   firefoxdeveloperedition
   air-video-server-hd
 )

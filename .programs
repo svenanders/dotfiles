@@ -88,6 +88,7 @@ apps=(
   spotify
   vagrant
   arq
+  skype
   iterm2
   qlprettypatch
   shiori

@@ -20,6 +20,7 @@ binaries=(
   ffmpeg
   python
   trash
+  ctags
   node
   gradle
   tree
@@ -70,6 +71,7 @@ apps=(
   alfred
   dashlane
   dropbox
+  megasync
   ynab
   google-chrome
   caffeine
@@ -165,4 +167,4 @@ mkdir -p ~/.vim/autoload ~/.vim/bundle && \
 curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
 git clone https://github.com/scrooloose/nerdtree.git
 git clone https://github.com/mxw/vim-jsx.git
-
+pip install pyflakes

@@ -155,3 +155,5 @@ function server() {
 function cd (){
  	builtin cd "$1" && title "$1"
 }
+
+alias fix_brew='sudo chown -R $USER /usr/local/'

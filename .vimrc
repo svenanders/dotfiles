@@ -3,13 +3,18 @@ set nocompatible
 syntax on
 filetype plugin indent on
 
-" jsx
-let g:js_indent_log = 0
-let g:jsx_pragma_required = 1
-
 " start pathogen
 execute pathogen#infect()
 call pathogen#helptags()
+
+" jsx in js
+let g:jsx_ext_required = 0
+
+set clipboard=unnamed
+" font
+set guifont=Inconsolata:h15
+" a good color scheme
+colo murphy
 
 "closetag
 autocmd FileType html,htmldjango,jinjahtml,eruby,mako let b:closetag_html_style=1
@@ -36,14 +41,9 @@ map  <C-l> :tabnext<CR>
 map  <C-h> :tabprevious<CR>
 map  <C-n> :tabnew<CR>
 
-
-set clipboard=unnamed
-
-" font
-set guifont=Inconsolata:h15
-
-" a good color scheme
-colo desert
+" Keep windows maximized
+set winminheight=0
+set winheight=999
 
 " type ',s' to save the buffers etc. 
 " Reopen where you were with Vim with 'vim -S'
@@ -51,6 +51,10 @@ nmap <leader>s :mksession
 
 " enable syntax highlighting
 syntax enable
+
+" ensure ftdetect et al work by including this after the Vundle stuff
+filetype plugin indent on
+
 set autoindent
 set autoread                                                 " reload files when changed on disk, i.e. via `git checkout`
 set backspace=2                                              " Fix broken backspace in some setups
@@ -65,6 +69,7 @@ set laststatus=2                                             " always show statu
 set list                                                     " show trailing whitespace
 set listchars=tab:▸\ ,trail:▫
 set number                                                   " show line numbers
+set ruler                                                    " show where you are
 set scrolloff=3                                              " show context above/below cursorline
 set shiftwidth=2                                             " normal mode indentation commands use 2 spaces
 set showcmd
@@ -80,10 +85,6 @@ set mouse=a
 if exists('$TMUX')  " Support resizing in tmux
   set ttymouse=xterm2
 endif
-
-" Keep windows maximized
-set winminheight=0
-set winheight=999
 
 " keyboard shortcuts
 let mapleader = ','
@@ -123,10 +124,17 @@ if executable('ag')
   let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
 endif
 
+" fdoc is yaml
+autocmd BufRead,BufNewFile *.fdoc set filetype=yaml
 " md is markdown
-autocmd BufRead,BufNewFile,BufReadPost *.md,*.markdown set filetype=markdown
-autocmd FileType markdown set tw=80
-
+autocmd BufRead,BufNewFile *.md set filetype=markdown
+" extra rails.vim help
+autocmd User Rails silent! Rnavcommand decorator      app/decorators            -glob=**/* -suffix=_decorator.rb
+autocmd User Rails silent! Rnavcommand observer       app/observers             -glob=**/* -suffix=_observer.rb
+autocmd User Rails silent! Rnavcommand feature        features                  -glob=**/* -suffix=.feature
+autocmd User Rails silent! Rnavcommand job            app/jobs                  -glob=**/* -suffix=_job.rb
+autocmd User Rails silent! Rnavcommand mediator       app/mediators             -glob=**/* -suffix=_mediator.rb
+autocmd User Rails silent! Rnavcommand stepdefinition features/step_definitions -glob=**/* -suffix=_steps.rb
 " automatically rebalance windows on vim resize
 autocmd VimResized * :wincmd =
 
@@ -138,57 +146,6 @@ else
   let &t_SI = "\<Esc>]50;CursorShape=1\x7"
   let &t_EI = "\<Esc>]50;CursorShape=0\x7"
 endif
-
-" Go crazy!
-if filereadable(expand("~/.vimrc.local"))
-  " In your .vimrc.local, you might like:
-  "
-  " set autowrite
-  " set nocursorline
-  " set nowritebackup
-  " set whichwrap+=<,>,h,l,[,] " Wrap arrow keys between lines
-  "
-  " autocmd! bufwritepost .vimrc source ~/.vimrc
-  " noremap! jj <ESC>
-  source ~/.vimrc.local
-endif
-
-set paste
-
-"""" UI Plugins =======================
-set laststatus=2               " enable airline even if no splits
-let g:airline_theme='luna'
-let g:airline_powerline_fonts=1
-let g:airline#extensions#branch#enabled=1
-let g:airline#extensions#syntastic#enabled = 1
-let g:airline_powerline_fonts = 1
-let g:airline_left_sep = ''
-let g:airline_right_sep = ''
-if !exists('g:airline_symbols')
-  let g:airline_symbols = {}
-endif
-let g:airline_left_sep = '»'
-let g:airline_left_sep = '▶'
-let g:airline_right_sep = '«'
-let g:airline_right_sep = '◀'
-let g:airline_symbols.linenr = '␊'
-let g:airline_symbols.linenr = '␤'
-let g:airline_symbols.linenr = '¶'
-let g:airline_symbols.branch = '⎇'
-let g:airline_symbols.paste = 'ρ'
-let g:airline_symbols.paste = 'Þ'
-let g:airline_symbols.paste = '∥'
-let g:airline_symbols.whitespace = 'Ξ'
-" display open buffers in tabline
-let g:airline#extensions#tabline#enabled = 1
-let g:airline_mode_map = {
-      \ 'n' : 'N',
-      \ 'i' : 'I',
-      \ 'R' : 'REPLACE',
-      \ 'v' : 'VISUAL',
-      \ 'V' : 'V-LINE',
-      \ 'c' : 'CMD   ',
-      \ }
 
 """"" Code Navigation ===============
 " kien/ctrlp.vim.git
@@ -209,8 +166,6 @@ let g:ctrlp_working_path_mode = ''
 let g:ctrlp_dont_split = 'NERD_tree_2' " don't split these buffers
 let g:ctrlp_custom_ignore = '\v[\/](node_modules|target|dist|git|hg|svn|gitkeep)|(\.(swp|ico|git|svn|exe|so|dll|log|gif|jpg|jpeg|png|psd|DS_Store|ctags|gitattributes))$'
 
-" let g:ctrlp_match_func = { 'match': 'pymatcher#PyMatch' }
-" let g:ctrlp_user_command = ['.git/', 'cd %s && git ls-files --exclude-standard -co'] " if you want to use git for this rather than ag
 let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
 let g:ctrlp_prompt_mappings = {
       \ 'AcceptSelection("e")': ['<c-e>', '<c-space>'],

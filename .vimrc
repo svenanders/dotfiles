@@ -169,4 +169,4 @@ let g:ctrlp_prompt_mappings = {
       \ 'ToggleFocus()':        ['<c-tab>'],
       \}
 
-colo murphy
+colo desert

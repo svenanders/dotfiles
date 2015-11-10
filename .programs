@@ -39,9 +39,15 @@ binaries=(
   xctool
   cgvg
   boot2docker
+  docker
+  docker-compose
+  docker-machine
+  docker-swarm
   watchman
   flow
   msmtp
+  carthage
+  awsebcli
 )
 
 echo "installing binaries..."
@@ -116,8 +122,6 @@ apps=(
   air-video-server-hd
 )
 
-
-
 # android-studio silently fails
 
 echo "Installing casks..."
@@ -158,13 +162,8 @@ brew cleanup
 
 nvm install stable
 
-curl -L https://github.com/docker/compose/releases/download/1.2.0/docker-compose-`uname -s`-`uname -m` > /usr/local/bin/docker-compose
-chmod +x /usr/local/bin/docker-compose
-
 # VIM
-cd ~/.vim/bundle
-mkdir -p ~/.vim/autoload ~/.vim/bundle && \
-curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
-git clone https://github.com/scrooloose/nerdtree.git
-git clone https://github.com/mxw/vim-jsx.git
+mv ~/.vim ~/vim_old
+git clone git@github.com:svenanders/vimbundles.git ~/.vim
+cd ~/.vim git submodule init && git submodule update
 pip install pyflakes

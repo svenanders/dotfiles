@@ -269,6 +269,9 @@ export PATH="/usr/local/bin:$PATH"
 # install rupa Z
 . /usr/local/bin/z.sh
 
+// set VIM as git editor
+export GIT_EDITOR=vim
+
 # source profiles
 . ~/.profile
 . ~/.profile.private

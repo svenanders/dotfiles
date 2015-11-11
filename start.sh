@@ -41,5 +41,5 @@ fi
 
 git config --global user.email "robbestad@gmail.com"
 git config --global user.name "Sven A Robbestad"
-
+npm adduser
 echo "Finished"

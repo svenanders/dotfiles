@@ -30,8 +30,8 @@ if [[ -f ./.osx && `uname` == "Darwin" ]]; then
 	  ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 	fi
 
-	echo "Installing OSX programs"
-	sh ./.programs
+	echo "Installing"
+	sh ./.install
 
 	echo "Making your Mac awesome"
 	sh ./.osx

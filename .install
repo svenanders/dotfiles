@@ -167,4 +167,7 @@ mv ~/.vim ~/vim_old
 git clone git@github.com:svenanders/vimbundles.git ~/.vim
 cd ~/.vim && git submodule init && git submodule update
 pip install pyflakes
+
+# GIT
 git config --global core.editor "vim"
+git config --global pull.rebase true

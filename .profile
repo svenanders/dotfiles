@@ -25,7 +25,7 @@ alias tarcompress="tar -czf " # Compress Ze Files
 alias tarextract="tar -xzf " # eXtract Ze Files
 
 # Docker
-eval "$(docker-machine env dev)"
+#eval "$(docker-machine env dev)"
 
 alias fixow='/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/LaunchServices.framework/Versions/A/Support/lsregister -kill -r -domain local -domain user;killall Finder;echo "Open With has been rebuilt, Finder will relaunch"'
 alias pw="pwgen -s1vv 12 | pbcopy && echo Nytt passord er kopiert til utklippstavlen"

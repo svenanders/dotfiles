@@ -12,10 +12,10 @@ EDITOR=mvim
 SEARCH=(.*$)
 
 # Default list of stuff to exclude from the search
-EXCLUDE=^SCCS$|^RCS$|^tags$|\.make\.state|\.svn|node_modules\/
+EXCLUDE=^SCCS$|^RCS$|^tags$|node_modules|\.state|\.git|bundle.*|\*.min.*
 
 # Maximum age of a log file before it's deleted.
-#AGE=30
+AGE=10
 
 # Colors on or off (1 or 0)
 COLORS=1

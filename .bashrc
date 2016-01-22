@@ -256,23 +256,12 @@ set_tab_title() {
 export PROMPT_COMMAND=create_bash_prompt
 export PROMPT_COMMAND="set_tab_title ; $PROMPT_COMMAND"
 
-### Prompt Colors
-#export GITAWAREPROMPT=~/.bash/git-aware-prompt
-#source $GITAWAREPROMPT/main.sh
-#
-##export PS1="\[$txtgrn\]\w\n\[$txtcyn\]\$git_branch\[$txtred\]\$git_dirty\[$txtrst\]⚡  "
-##export SUDO_PS1="\[$bakred\]\u@\h\[$txtrst\] \w\$ "
-#export CLICOLOR=1
-#export LSCOLORS=GxFxCxDxBxegedabagaced
-export PATH="/usr/local/bin:$PATH"
-
 # install rupa Z
 . /usr/local/bin/z.sh
-
-// set VIM as git editor
-export GIT_EDITOR=vim
 
 # source profiles
 . ~/.profile
 . ~/.profile.private
 
+export PATH=/Users/svena/.rbenv/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/sbin:$PATH
+eval "$(rbenv init -)"

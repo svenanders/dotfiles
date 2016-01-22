@@ -160,3 +160,6 @@ function cd (){
 }
 
 alias fix_brew='sudo chown -R $USER /usr/local/'
+alias fix_splitrouting='sudo /usr/local/libexec/splitrouting'
+export PATH="/usr/local/sbin:$PATH"
+

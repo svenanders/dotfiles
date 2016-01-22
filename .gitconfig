@@ -26,7 +26,7 @@
 	autocrlf = input
 	filemode = false
 	excludesfile = ~/.gitignore_global
-	editor = mvim -f
+	editor = subl -n -w
 	whitespace = tab-in-indent,blank-at-eof
 [log]
 	date = iso
@@ -52,8 +52,11 @@
 	dw = diff -b --word-diff=color
 	c = commit -m
 	ca = commit -am
+	br = branch
+	st = status
+	last = log -1 HEAD
 [merge]
-	tool = opendiff
+	tool = araxis
 [branch]
 	autosetuprebase = always
 [branch "master"]
@@ -61,3 +64,8 @@
 	merge = refs/heads/master
 [push]
 	default = simple
+[user]
+	email = robbestad@gmail.com
+	name = Sven A Robbestad
+[pull]
+	rebase = true

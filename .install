@@ -22,6 +22,7 @@ binaries=(
   trash
   ctags
   node
+  cgvg
   gradle
   tree
   ack
@@ -140,7 +141,7 @@ fonts=(
 
 # install fonts
 echo "Installing fonts..."
-brew cask install ${fonts[@]}
+brew cask install --force ${fonts[@]}
 
 # install macvim
 brew install macvim --with-override-system-vim

@@ -264,4 +264,5 @@ export PROMPT_COMMAND="set_tab_title ; $PROMPT_COMMAND"
 . ~/.profile.private
 
 export PATH=/Users/svena/.rbenv/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/sbin:$PATH
+export NODE_PATH=/usr/local/lib/node:/usr/local/lib/node_modules
 eval "$(rbenv init -)"

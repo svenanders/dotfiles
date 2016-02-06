@@ -147,6 +147,15 @@ brew cask install --force ${fonts[@]}
 # install macvim
 brew install macvim --with-override-system-vim
 
+echo "Installing Yeoman"
+npm install --global yo
+
+echo "Installing Gulp"
+npm install --global gulp
+
+echo "Angular2 generator"
+npm install --global generator-modern-web-dev
+
 echo "Installing React Native"
 npm install -g react-native-cli
 

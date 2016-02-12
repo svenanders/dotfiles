@@ -18,7 +18,7 @@ if tput setaf 1 &> /dev/null; then
 
   # If the terminal supports at least 256 colors, write out our 256 color based set
   if [[ "$(tput colors)" -ge 256 ]] &> /dev/null; then
-    user_color="$bold$(tput setaf 76)" # BOLD GREEN
+    user_color="$bold$(tput setaf 4)" # BOLD GREEN
     preposition_color="$bold$(tput setaf 0)" # BOLD WHITE
     device_color="$bold$(tput setaf 39)" # BOLD CYAN
     dir_color="$bold$(tput setaf 76)" # BOLD GREEN
@@ -264,5 +264,10 @@ export PROMPT_COMMAND="set_tab_title ; $PROMPT_COMMAND"
 . ~/.profile.private
 
 export PATH=/Users/svena/.rbenv/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/sbin:$PATH
-export NODE_PATH=/usr/local/lib/node:/usr/local/lib/node_modules
 eval "$(rbenv init -)"
+export PATH=/Users/svena/.rbenv/bin:/usr/local/opt/coreutils/libexec/gnubin:/Users/svena/.rbenv/shims:/Users/svena/.rbenv/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+eval "$(rbenv init -)"
+export PATH=/usr/local/opt/coreutils/libexec/gnubin:/usr/local/opt/coreutils/libexec/gnubin:/Users/svena/.rbenv/shims:/Users/svena/.rbenv/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+export PATH=/usr/local/opt/coreutils/libexec/gnubin:/usr/local/opt/coreutils/libexec/gnubin:/Users/svena/.rbenv/shims:/Users/svena/.rbenv/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+export NODE_PATH=/usr/local/lib/node:/usr/local/lib/node_modules
+export HISTTIMEFORMAT="%d/%m/%y %T " 

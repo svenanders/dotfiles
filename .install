@@ -52,7 +52,10 @@ binaries=(
 )
 
 echo "installing binaries..."
-brew install ${binaries[@]}
+brew reinstall ${binaries[@]}
+
+# Macvim needs some options
+brew reinstall macvim --HEAD --with-cscope --with-lua --with-override-system-vim
 
 # Install more recent versions of some OS X tools
 brew tap homebrew/dupes
@@ -143,9 +146,6 @@ fonts=(
 # install fonts
 echo "Installing fonts..."
 brew cask install --force ${fonts[@]}
-
-# install macvim
-brew install macvim --with-override-system-vim
 
 echo "Installing Yeoman"
 npm install --global yo

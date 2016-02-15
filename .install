@@ -169,6 +169,9 @@ echo "Installing Cocoapods"
 sudo gem install cocoapods
 pod setup --verbose
 
+echo "Installing CLI Twitter"
+sudo gem install t
+
 brew cleanup
 
 nvm install stable

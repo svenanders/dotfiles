@@ -103,6 +103,10 @@ nmap <leader>g :GitGutterToggle<CR>
 nmap <leader>c <Plug>Kwbd
 map <silent> <leader>V :source ~/.vimrc<CR>:filetype detect<CR>:exe ":echo 'vimrc reloaded'"<CR>
 
+" larger/smaller font
+nmap <leader>+ :set guifont=Inconsolata:h24<CR>
+nmap <leader>- :set guifont=Inconsolata:h18<CR>
+
 " in case you forgot to sudo
 cmap w!! %!sudo tee > /dev/null %
 
@@ -169,4 +173,6 @@ let g:ctrlp_prompt_mappings = {
       \ 'ToggleFocus()':        ['<c-tab>'],
       \}
 
-colo desert
+colo zellner
+set guifont=Inconsolata:h16
+

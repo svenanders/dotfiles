@@ -30,7 +30,7 @@ if [[ -f ./.osx && `uname` == "Darwin" ]]; then
 	  ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 	fi
 
-	echo "Awesomeifying your Mac"
+	echo "Making your Mac more awesome"
 	sh ./.install && sh ./osx 
 
 	sudo bash -c "echo /usr/local/bin/bash >> /private/etc/shells"

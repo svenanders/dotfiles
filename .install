@@ -130,7 +130,7 @@ apps=(
 # android-studio silently fails
 
 echo "Installing casks..."
-brew cask install --appdir="/Applications" ${apps[@]}
+brew cask install --force --appdir="/Applications" ${apps[@]}
 
 # Install fonts like a boss
 brew tap caskroom/fonts

@@ -1,7 +1,8 @@
 #!/usr/bin/env bash
 
 cp ./z.sh /usr/local/bin/z.sh
-cp ./imgcat.sh /usr/local/bin/imgcat.sh
+cp ./imgcat.sh /usr/local/bin/imgcat
+chmod +x /usr/local/bin/imgcat
 cp ./.bash_profile ~/.bash_profile
 cp ./.bashrc ~/.bashrc
 cp ./.inputrc ~/.inputrc

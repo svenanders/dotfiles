@@ -57,6 +57,9 @@ brew reinstall ${binaries[@]}
 # Macvim needs some options
 brew reinstall macvim --HEAD --with-cscope --with-lua --with-override-system-vim
 
+# install global subversion with javahl support
+brew install --universal --java subversion
+
 # Install more recent versions of some OS X tools
 brew tap homebrew/dupes
 brew install homebrew/dupes/grep
@@ -110,7 +113,6 @@ apps=(
   webstorm
   flux
   mou
-  mailbox
   qlstephen
   sketch
   tower

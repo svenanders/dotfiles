@@ -271,3 +271,5 @@ export PATH=/usr/local/opt/coreutils/libexec/gnubin:/usr/local/opt/coreutils/lib
 export PATH=/usr/local/opt/coreutils/libexec/gnubin:/usr/local/opt/coreutils/libexec/gnubin:/Users/svena/.rbenv/shims:/Users/svena/.rbenv/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
 export NODE_PATH=/usr/local/lib/node:/usr/local/lib/node_modules
 export HISTTIMEFORMAT="%d/%m/%y %T " 
+export "JAVA_HOME=\$(/usr/libexec/java_home)" >> ~/.bash_profile
+export PATH=.:/usr/local/Cellar/subversion/1.9.3/bin/:$HOME/bin:$PATH

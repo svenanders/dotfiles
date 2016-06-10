@@ -23,7 +23,6 @@ binaries=(
   ctags
   node
   cgvg
-  gradle
   tree
   ack
   hub
@@ -82,29 +81,24 @@ brew tap caskroom/versions
 apps=(
   java
   alfred
-  dashlane
   dropbox
   megasync
-  ynab
   google-chrome
   caffeine
   sizeup
   qlcolorcode
   balsamiq-mockups
   screenflick
-  slack
   transmit
   dashlane
   cleanmymac
   appcleaner
-  firefox
   hazel
   qlmarkdown
   spotify
   vagrant
   arq
   skype
-  iterm2
   qlprettypatch
   shiori
   sublime-text3
@@ -123,16 +117,17 @@ apps=(
   skype
   visual-studio-code
   transmission
-  audacity210
+  audacity
   firefoxdeveloperedition
-  brave
-  air-video-server-hd
 )
 
 # android-studio silently fails
 
 echo "Installing casks..."
 brew cask install --force --appdir="/Applications" ${apps[@]}
+
+echo "Installing gradle..."
+brew install gradle
 
 # Install fonts like a boss
 brew tap caskroom/fonts
@@ -187,3 +182,4 @@ pip install pyflakes
 # GIT
 git config --global core.editor "vim"
 git config --global pull.rebase true
+git config --global rebase.autoStash true

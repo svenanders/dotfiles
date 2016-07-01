@@ -23,11 +23,6 @@
 #     * z -l foo  # list matches instead of cd
 #     * z -c foo  # restrict matches to subdirs of $PWD
 
-function title (){
-    TITLE=$*;
-    export PROMPT_COMMAND='echo -ne "\033]0;$TITLE\007"'
-}
-
 [ -d "${_Z_DATA:-$HOME/.z}" ] && {
     echo "ERROR: z.sh's datafile (${_Z_DATA:-$HOME/.z}) is a directory."
 }
@@ -38,6 +33,14 @@ _z() {
 
     # bail if we don't own ~/.z and $_Z_OWNER not set
     [ -z "$_Z_OWNER" -a -f "$datafile" -a ! -O "$datafile" ] && return
+
+    _z_dirs () {
+      while read line; do
+        # only count directories
+        [ -d "${line%%\|*}" ] && echo $line
+      done < "$datafile"
+      return 0
+    }
 
     # add entries
     if [ "$1" = "--add" ]; then
@@ -54,10 +57,7 @@ _z() {
 
         # maintain the data file
         local tempfile="$datafile.$RANDOM"
-        while read line; do
-            # only count directories
-            [ -d "${line%%\|*}" ] && echo $line
-        done < "$datafile" | awk -v path="$*" -v now="$(date +%s)" -F"|" '
+        awk < <( _z_dirs ) -v path="$*" -v now="$(date +%s)" -F"|" '
             BEGIN {
                 rank[path] = 1
                 time[path] = now
@@ -80,7 +80,7 @@ _z() {
                 } else for( x in rank ) print x "|" rank[x] "|" time[x]
             }
         ' 2>/dev/null >| "$tempfile"
-        # do our best to avoid clobbering the datafile in a race condition
+        # do our best to avoid clobbering the datafile in a race condition.
         if [ $? -ne 0 -a -f "$datafile" ]; then
             env rm -f "$tempfile"
         else
@@ -111,11 +111,12 @@ _z() {
             --) while [ "$1" ]; do shift; local fnd="$fnd${fnd:+ }$1";done;;
             -*) local opt=${1:1}; while [ "$opt" ]; do case ${opt:0:1} in
                     c) local fnd="^$PWD $fnd";;
-                    h) echo "${_Z_CMD:-z} [-chlrtx] args" >&2; return;;
-                    x) sed -i -e "\:^${PWD}|.*:d" "$datafile";;
+                    e) local echo=echo;;
+                    h) echo "${_Z_CMD:-z} [-cehlrtx] args" >&2; return;;
                     l) local list=1;;
                     r) local typ="rank";;
                     t) local typ="recent";;
+                    x) sed -i -e "\:^${PWD}|.*:d" "$datafile";;
                 esac; opt=${opt:1}; done;;
              *) local fnd="$fnd${fnd:+ }$1";;
         esac; local last=$1; [ "$#" -gt 0 ] && shift; done
@@ -131,9 +132,7 @@ _z() {
         [ -f "$datafile" ] || return
 
         local cd
-        cd="$(while read line; do
-            [ -d "${line%%\|*}" ] && echo $line
-        done < "$datafile" | awk -v t="$(date +%s)" -v list="$list" -v typ="$typ" -v q="$fnd" -F"|" '
+        cd="$( < <( _z_dirs ) awk -v t="$(date +%s)" -v list="$list" -v typ="$typ" -v q="$fnd" -F"|" '
             function frecent(rank, time) {
                 # relate frequency and time
                 dx = t - time
@@ -202,9 +201,8 @@ _z() {
                 }
             }
         ')"
-        [ $? -gt 0 ] && return
-        [ "$cd" ] && cd "$cd"
-        title $(basename `pwd`)
+
+        [ $? -eq 0 ] && [ "$cd" ] && ${echo:-cd} "$cd"
     fi
 }
 
@@ -212,7 +210,7 @@ alias ${_Z_CMD:-z}='_z 2>&1'
 
 [ "$_Z_NO_RESOLVE_SYMLINKS" ] || _Z_RESOLVE_SYMLINKS="-P"
 
-if compctl >/dev/null 2>&1; then
+if type compctl >/dev/null 2>&1; then
     # zsh
     [ "$_Z_NO_PROMPT_COMMAND" ] || {
         # populate directory list, avoid clobbering any other precmds.
@@ -236,7 +234,7 @@ if compctl >/dev/null 2>&1; then
         reply=(${(f)"$(_z --complete "$compl")"})
     }
     compctl -U -K _z_zsh_tab_completion _z
-elif complete >/dev/null 2>&1; then
+elif type complete >/dev/null 2>&1; then
     # bash
     # tab completion
     complete -o filenames -C '_z --complete "$COMP_LINE"' ${_Z_CMD:-z}

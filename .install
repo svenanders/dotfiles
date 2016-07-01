@@ -12,7 +12,7 @@ npm install npm@latest -g
 
 # get binaries
 binaries=(
-  graphicsmagick
+  imagemagick
   webkit2png
   rename
   zopfli
@@ -83,7 +83,6 @@ apps=(
   alfred
   dropbox
   megasync
-  google-chrome
   caffeine
   sizeup
   qlcolorcode
@@ -93,7 +92,6 @@ apps=(
   dashlane
   cleanmymac
   appcleaner
-  hazel
   qlmarkdown
   spotify
   vagrant
@@ -102,9 +100,6 @@ apps=(
   qlprettypatch
   shiori
   sublime-text3
-  virtualbox
-  atom
-  webstorm
   flux
   mou
   qlstephen
@@ -115,7 +110,6 @@ apps=(
   nvalt
   quicklook-json
   skype
-  visual-studio-code
   transmission
   audacity
   firefoxdeveloperedition
